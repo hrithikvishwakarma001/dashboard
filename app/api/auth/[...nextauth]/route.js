@@ -3,12 +3,11 @@ import GoogleProvider from "next-auth/providers/google";
 const authenticationHandler = NextAuth({
 	providers: [
 		GoogleProvider({
-			clientId:
-				"124399473651-un2e0mg8lvgpgg87cr44du1nb15k99j2.apps.googleusercontent.com",
-			clientSecret: "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",
+			clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+			clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
 		}),
 	],
-	secret: "hrithikisgoodboy",
+	secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
 });
 
 export { authenticationHandler as GET, authenticationHandler as POST };
