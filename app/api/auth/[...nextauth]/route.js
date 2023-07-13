@@ -8,6 +8,7 @@ const authenticationHandler = NextAuth({
 			clientSecret: "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",
 		}),
 	],
+	secret: "hrithikisgoodboy",
 });
 
 export { authenticationHandler as GET, authenticationHandler as POST };
