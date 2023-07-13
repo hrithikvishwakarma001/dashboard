@@ -12,19 +12,20 @@ const Schedule = () => {
 			/>
 			<div
 				className='w-full px-4
-       border-green-500 border-s-8 border-opacity-10 
+       border-green-500 border-s-8 border-opacity-10  max-sm:text-sm
+			 md:ml-4
       '>
-				<p className='font-semibold text-md'>
+				<p className='font-semibold  '>
 					Meeting with suppliers from kuta bali
 				</p>
 				<p className='text-gray-500'>14.00-15.00</p>
 				<p className='text-gray-500'>at Sunset Road, Kuta, Bali</p>
 			</div>
 			<div
-				className='w-full px-4 mt-4
-       border-indigo-500 border-s-8 border-opacity-10 
+				className='w-full px-4 mt-6
+       border-indigo-500 border-s-8 border-opacity-10 max-sm:text-sm  md:ml-4
       '>
-				<p className='font-semibold text-md'>
+				<p className='font-semibold'>
 					Check operation at Giga Factory 1
 				</p>
 				<p className='text-gray-500'>18.00-20.00</p>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -12,14 +12,14 @@ export default function page() {
 		return (
 			<div className='flex flex-col items-center justify-center h-screen w-screen'>
 				<h1 className='text-4xl font-bold text-[#000] mb-4'>
-					Loading...
+					<div className='animate-spin rounded-full h-10 w-10 border-[5px] border-b-[#f5f5f5] border-gray-900'></div>
 				</h1>
 			</div>
 		);
 	if (status === "unauthenticated") {
 		return (
 			<div className='flex flex-col items-center justify-center h-screen w-screen'>
-				<div className='text-2xl font-bold text-[#000] mb-4'>
+				<div className='text-2xl font-bold text-[#000] mb-4 max-sm:text-lg'>
 					This route is protected, please sign in
 				</div>
 				<div className='flex items-center justify-center gap-4 mt-4'>

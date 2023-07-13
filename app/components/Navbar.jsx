@@ -6,7 +6,6 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { HiUserCircle } from "react-icons/hi";
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
-
 const Navbar = () => {
 	const [isProfileOpen, setProfileOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -30,8 +29,8 @@ const Navbar = () => {
 							type='text'
 							className='bg-white text-gray-800 rounded-xl px-4 py-2 focus:outline-none w-52'
 							placeholder='Search...'
-              value={search}
-              onChange={handleSearch}
+							value={search}
+							onChange={handleSearch}
 						/>
 						<div className='absolute top-1/2 right-2 transform -translate-y-1/2 '>
 							<AiOutlineSearch className='text-gray-400 text-xl' />
@@ -47,8 +46,8 @@ const Navbar = () => {
 							className='rounded-full cursor-pointer '
 							src={data?.user?.image}
 							alt='profile'
-              width={40}
-              height={40}
+							width={40}
+							height={40}
 						/>
 						{isProfileOpen && (
 							<div className='bg-[#fff] rounded-s-3xl p-4 absolute right-0 top-16'>
