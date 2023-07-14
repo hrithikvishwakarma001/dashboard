@@ -42,7 +42,7 @@ const Sidebar = ({ children }) => {
 		}
 		return child;
 	});
- console.log(data)
+//  console.log(data)
 	return (
 		<div className='flex h-full relative'>
 			<div className='flex-none sm:hidden max-sm:absolute max-sm:top-[62px] max-sm:left-3'>
