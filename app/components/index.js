@@ -1,6 +1,6 @@
 import Form from "./Form";
 import Testimonials from "./Testimonials";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 import Sidebar from "./Sidebar";
 import DashboardSidebar from "./DashboardSidebar";
 import Navbar from "./Navbar";

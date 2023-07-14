@@ -20,7 +20,7 @@ const Navbar = () => {
 	return (
 		<nav className='px-4 py-3'>
 			<div className='flex items-center justify-between'>
-				<div className='text-black font-bold text-lg max-lg:hidden'>
+				<div className='text-black font-bold text-2xl max-lg:hidden'>
 					Dashboard
 				</div>
 				<div className='flex items-center'>

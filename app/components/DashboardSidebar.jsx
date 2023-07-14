@@ -2,12 +2,14 @@
 
 import React, { useState } from "react";
 import { FiPieChart, FiSettings } from "react-icons/fi";
-import { IoPricetagsOutline } from "react-icons/io5"
+import { IoPricetagsOutline } from "react-icons/io5";
 import { MdEditCalendar } from "react-icons/md";
 import { BiUserCircle } from "react-icons/bi";
 import Link from "next/link";
+import { getDashboardData } from "../server";
 
 const Sidebar = ({ children }) => {
+	const [data, setData] = useState([]);
 	const [isSidebarOpen, setSidebarOpen] = useState(false);
 	const [isActive, setActive] = useState("Dashboard");
 	const toggleSidebar = () => {
@@ -26,7 +28,21 @@ const Sidebar = ({ children }) => {
 		setActive((prev) => name);
 	};
 
-	// console.log(isActive)
+	React.useEffect(() => {
+		getDashboardData().then((res) => {
+			setData(res);
+		});
+	}, []);
+
+	const childrenWithProp = React.Children.map(children, (child) => {
+		// checking isValidElement is the safe way and avoids a typescript error too
+		const props = { data };
+		if (React.isValidElement(child)) {
+			return React.cloneElement(child, props);
+		}
+		return child;
+	});
+
 	return (
 		<div className='flex h-full relative'>
 			<div className='flex-none sm:hidden max-sm:absolute max-sm:top-[62px] max-sm:left-3'>
@@ -71,7 +87,12 @@ const Sidebar = ({ children }) => {
 							key={index}
 							className='flex items-center gap-4'
 							onClick={() => handleSetActive(item.name)}>
-							<item.icon className={`text-xl ${item.name==="Transaction" &&"transform scale-x-[-1]"}`} />
+							<item.icon
+								className={`text-xl ${
+									item.name === "Transaction" &&
+									"transform scale-x-[-1]"
+								}`}
+							/>
 							<Link
 								href={item.link}
 								className={`text-lg font-${
@@ -89,7 +110,7 @@ const Sidebar = ({ children }) => {
 					<Link href={"/dashboard"}>Contact us</Link>
 				</div>
 			</div>
-			<div className=' w-[100%] p-10'>{children}</div>
+			<div className=' w-[100%] p-10'>{childrenWithProp}</div>
 		</div>
 	);
 };
