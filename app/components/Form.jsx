@@ -21,7 +21,7 @@ const SignInButtons = () => {
 const InputBoxes = () => {
 
 	return (
-		<div className='flex flex-col justify-center'>
+		<div className='flex flex-col justify-center '>
 			<form
 				className='max-w-[400px] w-full mx-auto rounded-xl bg-white px-8 py-4'
 				>

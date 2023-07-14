@@ -6,7 +6,7 @@ import { signIn } from "next-auth/react";
 const CustomButton = ({ isGoogle, text, isApple }) => {
 	return (
 		<button
-			className='flex items-center justify-center w-50 max-w-md rounded-xl  bg-[#fff] text-gray-500 hover:bg-gray-100 focus:outline-none transition duration-500 ease-in-out font-[300] text-sm py-2 px-4 md:px-6 max-sm:text-xs max-sm:px-2 '
+			className='flex items-center justify-center w-50 max-w-md rounded-xl  bg-[#fff] text-gray-500 hover:bg-gray-100 focus:outline-none transition duration-500 ease-in-out font-[300] text-sm py-2 px-4 md:px-6 max-sm:text-xs max-sm:px-2 lg:my-3'
 			onClick={() =>
 				isApple ||
 				signIn("google", {

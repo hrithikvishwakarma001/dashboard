@@ -5,7 +5,9 @@ export default function Home() {
 	return (
 		<main className='flex w-screen max-md:flex-col h-screen '>
 			<Sidebar />
-			<div className=' text-[#000] md:container flex items-center justify-center '>
+			<div
+				className=' text-[#000] md:container flex items-center justify-center 
+			'>
 				<Form />
 			</div>
 		</main>
